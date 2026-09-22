@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<footer class="footer" th:fragment="footer">
+
+<div class="footer-main">
+
+<div class="footer-brand">
+<a th:href="@{/#home}" class="footer-logo">GB</a>
+<p>Building my path in Tech.</p>
+</div>
+
+<div class="footer-navigation">
+<span>Navigation</span>
+<a th:href="@{/#about}">Chi sono</a>
+<a th:href="@{/#skills}">Competenze</a>
+<a th:href="@{/#projects}">Progetti</a>
+<a th:href="@{/#contact}">Contatti</a>
+</div>
+
+<div class="footer-social">
+<span>Connect</span>
+<a href="https://www.linkedin.com/in/giuliabalaban/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+<a href="https://github.com/balabangiulia8-cat" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+<a href="mailto:balabangiulia8@gmail.com">Email ↗</a>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 Giulia Balaban</p>
+
+<div class="footer-legal">
+<a th:href="@{/privacy}">Privacy & Cookie Policy</a>
+<span>Designed & developed by Giulia Balaban</span>
+</div>
+</div>
+
+</footer>
+
+</body>
+</html>

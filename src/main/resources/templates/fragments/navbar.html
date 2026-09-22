@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<header class="header" th:fragment="navbar">
+<nav class="navbar">
+
+<a th:href="@{/}" href="/" class="logo">GB</a>
+
+<button class="menu-toggle" type="button" aria-label="Apri menu" aria-expanded="false">
+<span></span>
+<span></span>
+<span></span>
+</button>
+
+<ul class="nav-links">
+
+<li>
+<a th:href="@{/#about}" href="/#about">
+Chi sono
+</a>
+</li>
+
+<li>
+<a th:href="@{/#skills}" href="/#skills">
+Competenze
+</a>
+</li>
+
+<li>
+<a th:href="@{/#projects}" href="/#projects">
+Progetti
+</a>
+</li>
+
+<li>
+<a th:href="@{/#certifications}" href="/#certifications">
+Certificazioni
+</a>
+</li>
+
+<li>
+<a th:href="@{/#experience}" href="/#experience">
+Percorso
+</a>
+</li>
+
+<li>
+<a th:href="@{/#contact}" href="/#contact">
+Contatti
+</a>
+</li>
+
+</ul>
+
+</nav>
+</header>
+
+</body>
+</html>

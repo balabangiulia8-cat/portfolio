@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Itineraria - progetto web sviluppato con Java, Spring Boot, Thymeleaf e MySQL.">
+<title>Itineraria | Giulia Balaban</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="icon" type="image/png" th:href="@{/images/favicon.png}">
+<link rel="apple-touch-icon" th:href="@{/images/favicon.png}">
+</head>
+<body>
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+<main class="case-study">
+<section class="project-hero">
+<div class="project-hero-inner">
+<a th:href="@{/#projects}" class="project-back">← Torna ai progetti</a>
+<p class="section-label">Featured Project · 2026</p>
+<h1>Itineraria</h1>
+<p class="project-hero-subtitle">Discover the city differently.</p>
+<p class="project-hero-description">Applicazione web pensata per aiutare le persone a scoprire luoghi di interesse, eventi ed esperienze urbane attraverso un'interfaccia semplice e intuitiva.</p>
+<div class="project-hero-actions">
+<a href="https://github.com/mariaagnesesette/itineria" target="_blank" rel="noopener noreferrer" class="btn btn-primary">GitHub Repository ↗</a>
+<a href="#overview" class="btn btn-secondary">Scopri il progetto ↓</a>
+</div>
+<div class="project-meta">
+<div><span>Ruolo</span><strong>Frontend & UX</strong></div>
+<div><span>Progetto</span><strong>Team Project</strong></div>
+<div><span>Percorso</span><strong>Generation Italy</strong></div>
+<div><span>Anno</span><strong>2026</strong></div>
+</div>
+</div>
+</section>
+<section class="case-section" id="overview">
+<div class="case-container">
+<p class="case-number">01</p>
+<p class="section-label">Overview</p>
+<div class="case-two-columns">
+<div>
+<h2 class="case-title">Il progetto.</h2>
+</div>
+<div class="case-copy">
+<p>Itineraria nasce come progetto di team con l'obiettivo di creare una piattaforma dedicata alla scoperta della città.</p>
+<p>L'applicazione raccoglie diverse categorie di luoghi, tra cui musei, biblioteche, parchi, ristoranti e locali, affiancandole a eventi e contenuti utili per esplorare il territorio.</p>
+<p>La città pilota utilizzata durante lo sviluppo è Torino.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="case-section case-section-alt">
+<div class="case-container">
+<p class="case-number">02</p>
+<p class="section-label">Challenge</p>
+<div class="case-two-columns">
+<div><h2 class="case-title">Il problema.</h2></div>
+<div class="case-copy">
+<p>Le informazioni su luoghi, attività ed eventi sono spesso distribuite tra piattaforme differenti e non sempre vengono presentate in modo immediato.</p>
+<p>L'obiettivo era progettare un'esperienza capace di rendere la scoperta della città più semplice, organizzando contenuti diversi in un'unica interfaccia.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="case-section">
+<div class="case-container">
+<p class="case-number">03</p>
+<p class="section-label">Solution</p>
+<h2 class="case-title">La soluzione.</h2>
+<div class="case-features">
+<article class="case-feature">
+<span>01</span>
+<h3>Luoghi di interesse</h3>
+<p>Musei, biblioteche, aree verdi, ristoranti e locali organizzati per categoria.</p>
+</article>
+<article class="case-feature">
+<span>02</span>
+<h3>Ricerca</h3>
+<p>Un punto di accesso rapido per trovare luoghi e contenuti disponibili nell'applicazione.</p>
+</article>
+<article class="case-feature">
+<span>03</span>
+<h3>Pagine dettaglio</h3>
+<p>Informazioni dedicate ai singoli luoghi, con contenuti strutturati e navigazione coerente.</p>
+</article>
+<article class="case-feature">
+<span>04</span>
+<h3>Eventi</h3>
+<p>Una sezione dedicata agli eventi della città integrata con il resto dell'esperienza.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="case-section case-section-alt">
+<div class="case-container">
+<p class="case-number">04</p>
+<p class="section-label">My contribution</p>
+<div class="case-two-columns">
+<div><h2 class="case-title">Il mio contributo.</h2></div>
+<div class="case-copy">
+<p>Nel progetto mi sono concentrata soprattutto sulla parte Frontend & UX, lavorando sull'identità visiva, sulla struttura delle pagine e sulla trasformazione delle funzionalità dell'applicazione in interfacce semplici da utilizzare.</p>
+<p>Ho lavorato sull'integrazione delle view con Thymeleaf e Spring Boot, sulla navigazione tra le pagine e sulla risoluzione di problemi legati alla visualizzazione e ai template.</p>
+<p>Il progetto mi ha permesso di lavorare concretamente sul collegamento tra frontend, backend e dati all'interno di un'applicazione Java.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="case-section">
+<div class="case-container">
+<p class="case-number">05</p>
+<p class="section-label">Tech Stack</p>
+<h2 class="case-title">Tecnologie utilizzate.</h2>
+<div class="case-tech-grid">
+<div class="case-tech"><span>Backend</span><h3>Java</h3><p>Logica applicativa e struttura del progetto.</p></div>
+<div class="case-tech"><span>Framework</span><h3>Spring Boot</h3><p>Controller, servizi e gestione dell'applicazione web.</p></div>
+<div class="case-tech"><span>Frontend</span><h3>Thymeleaf</h3><p>Template dinamici integrati con Spring.</p></div>
+<div class="case-tech"><span>Database</span><h3>MySQL</h3><p>Persistenza e gestione dei dati relazionali.</p></div>
+<div class="case-tech"><span>Persistence</span><h3>JPA / Hibernate</h3><p>Mapping e gestione delle entità.</p></div>
+<div class="case-tech"><span>Workflow</span><h3>Git & GitHub</h3><p>Versionamento e collaborazione nel team.</p></div>
+</div>
+</div>
+</section>
+<section class="case-section case-section-alt">
+<div class="case-container">
+<p class="case-number">06</p>
+<p class="section-label">Interface</p>
+<h2 class="case-title">Dentro Itineraria.</h2>
+<p class="case-intro">Una breve demo dell'interfaccia e delle principali sezioni sviluppate durante il progetto.</p>
+<div class="case-video">
+<video controls playsinline preload="metadata">
+<source th:src="@{/videos/itineraria-demo.mp4}" type="video/mp4">
+Il tuo browser non supporta la riproduzione video.
+</video>
+</div>
+</div>
+</section>
+<section class="case-section">
+<div class="case-container">
+<p class="case-number">07</p>
+<p class="section-label">What I learned</p>
+<div class="case-two-columns">
+<div><h2 class="case-title">Cosa mi ha lasciato.</h2></div>
+<div class="case-copy">
+<p>Itineraria è stato uno dei primi progetti in cui ho lavorato su un'applicazione completa insieme ad altre persone.</p>
+<p>Ho imparato a ragionare non solo sul codice, ma anche sull'esperienza dell'utente, sull'organizzazione delle informazioni e sull'integrazione tra diverse parti dell'applicazione.</p>
+<p>Mi ha inoltre permesso di affrontare debugging reale, problemi di navigazione, template dinamici e collaborazione attraverso Git.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="project-final">
+<div class="case-container">
+<p class="section-label">Explore the project</p>
+<h2>Vuoi vedere il codice?</h2>
+<p>Il repository del progetto è disponibile pubblicamente su GitHub.</p>
+<div class="project-final-actions">
+<a href="https://github.com/mariaagnesesette/itineria" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Apri GitHub ↗</a>
+<a th:href="@{/#projects}" class="btn btn-secondary">← Torna al portfolio</a>
+</div>
+</div>
+</section>
+</main>
+<div th:replace="~{fragments/footer :: footer}"></div>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

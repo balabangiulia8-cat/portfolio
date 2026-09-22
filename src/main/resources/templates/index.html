@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Portfolio di Giulia Balaban - Software Development, AI, IT Consulting e Project Management.">
+<title>Giulia Balaban | Portfolio</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="icon" type="image/png" th:href="@{/images/favicon.png}">
+<link rel="apple-touch-icon" th:href="@{/images/favicon.png}">
+</head>
+<body>
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+<main>
+<section class="hero" id="home">
+<div class="hero-content">
+<p class="section-label">Ciao, sono</p>
+<h1>Giulia Balaban</h1>
+<h2>Building my path in Tech.</h2>
+<p class="hero-description">Software Development · AI · IT Consulting · Project Management</p>
+<p class="hero-text">Sto costruendo il mio percorso nel mondo tecnologico attraverso sviluppo, problem solving, curiosità e apprendimento continuo.</p>
+<div class="hero-buttons">
+<a href="#projects" class="btn btn-primary">Scopri i miei progetti</a>
+<a href="#contact" class="btn btn-secondary">Contattami</a>
+</div>
+</div>
+</section>
+<section class="section" id="about">
+<div class="section-container">
+<p class="section-number">01</p>
+<p class="section-label">Chi sono</p>
+<h2 class="section-title">Dal business alla tecnologia.</h2>
+<div class="about-grid">
+<div class="about-main">
+<p>Il mio percorso professionale è iniziato nel mondo amministrativo e contabile, dove ho imparato a gestire responsabilità, clienti, scadenze e problemi reali.</p>
+<p>Con il tempo ho sentito il bisogno di avvicinarmi sempre di più alla tecnologia e di costruire qualcosa di nuovo.</p>
+<p>Da questa scelta è iniziato il mio percorso nella programmazione e successivamente la formazione con Generation.</p>
+<p>Oggi continuo a sviluppare le mie competenze tecniche, lavorare su nuovi progetti ed esplorare diverse aree del mondo IT.</p>
+</div>
+<div class="about-card">
+<span>Attualmente sto esplorando</span>
+<ul>
+<li>Software Development</li>
+<li>Artificial Intelligence</li>
+<li>IT Engineering</li>
+<li>IT Consulting</li>
+<li>Project Management</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="section section-alternate" id="skills">
+<div class="section-container">
+<p class="section-number">02</p>
+<p class="section-label">Competenze</p>
+<h2 class="section-title">Skills, tools and mindset.</h2>
+<p class="section-description">Non solo tecnologie: il mio approccio unisce sviluppo, organizzazione, problem solving e curiosità verso nuove aree del mondo tech.</p>
+<div class="skills-grid">
+<article class="skill-card">
+<div class="skill-card-top"><span class="skill-number">01</span><div class="skill-icon">&lt;/&gt;</div></div>
+<h3>Development</h3>
+<p class="skill-text">Sviluppo applicazioni web lavorando sia sulla logica backend sia sulla costruzione delle interfacce e sull'esperienza dell'utente.</p>
+<div class="skill-group">
+<p class="skill-category">Backend</p>
+<div class="skill-tags"><span>Java</span><span>Spring Boot</span><span>JPA / Hibernate</span><span>REST API</span></div>
+</div>
+<div class="skill-group">
+<p class="skill-category">Frontend</p>
+<div class="skill-tags"><span>HTML</span><span>CSS</span><span>Thymeleaf</span><span>JavaScript</span></div>
+</div>
+</article>
+<article class="skill-card">
+<div class="skill-card-top"><span class="skill-number">02</span><div class="skill-icon">◫</div></div>
+<h3>Data & Database</h3>
+<p class="skill-text">Gestisco dati relazionali, query e collegamenti tra entità a supporto della logica e del funzionamento delle applicazioni.</p>
+<div class="skill-group">
+<p class="skill-category">Database</p>
+<div class="skill-tags"><span>SQL</span><span>MySQL</span><span>Database relazionali</span></div>
+</div>
+<div class="skill-group">
+<p class="skill-category">Data Design</p>
+<div class="skill-tags"><span>Query</span><span>Relazioni</span><span>Schema Design</span></div>
+</div>
+</article>
+<article class="skill-card">
+<div class="skill-card-top"><span class="skill-number">03</span><div class="skill-icon">✦</div></div>
+<h3>Tools & Workflow</h3>
+<p class="skill-text">Utilizzo strumenti di sviluppo, versionamento e collaborazione per organizzare il lavoro e gestire il ciclo di sviluppo software.</p>
+<div class="skill-group">
+<p class="skill-category">Version Control</p>
+<div class="skill-tags"><span>Git</span><span>GitHub</span></div>
+</div>
+<div class="skill-group">
+<p class="skill-category">Development Tools</p>
+<div class="skill-tags"><span>VS Code</span><span>Maven</span><span>Docker</span></div>
+</div>
+</article>
+<article class="skill-card">
+<div class="skill-card-top"><span class="skill-number">04</span><div class="skill-icon">→</div></div>
+<h3>Ways of Working</h3>
+<p class="skill-text">Unisco metodo di lavoro, collaborazione e problem solving all'esperienza maturata in contesti professionali.</p>
+<div class="skill-group">
+<p class="skill-category">Methodologies</p>
+<div class="skill-tags"><span>Agile</span><span>Scrum</span></div>
+</div>
+<div class="skill-group">
+<p class="skill-category">Professional Skills</p>
+<div class="skill-tags"><span>Problem Solving</span><span>Teamwork</span><span>Organizzazione</span><span>Analisi dei processi</span><span>Gestione scadenze</span></div>
+</div>
+</article>
+<article class="skill-card skill-card-wide">
+<div class="skill-card-top"><span class="skill-number">05</span><div class="skill-icon">↗</div></div>
+<h3>What I'm Exploring</h3>
+<p class="skill-text">Sto ampliando progressivamente le mie competenze per capire dove tecnologia, business e gestione dei progetti possono incontrarsi.</p>
+<div class="skill-group">
+<p class="skill-category">Next Areas</p>
+<div class="skill-tags"><span>Artificial Intelligence</span><span>IT Engineering</span><span>IT Consulting</span><span>Project Management</span></div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="projects">
+<div class="section-container">
+<p class="section-number">03</p>
+<p class="section-label">Progetti</p>
+<h2 class="section-title">Quello che sto costruendo.</h2>
+<div class="projects-grid">
+<article class="project-card project-featured">
+<div class="project-top"><span class="project-number">01</span><span class="project-status">Featured Project</span></div>
+<div class="project-content">
+<h3>Itineraria</h3>
+<p>Applicazione web dedicata alla scoperta di luoghi di interesse, eventi ed esperienze urbane.</p>
+<div class="project-tech"><span>Java</span><span>Spring Boot</span><span>Thymeleaf</span><span>MySQL</span><span>JPA</span></div>
+<div class="project-links"><a th:href="@{/projects/itineraria}">Esplora il progetto →</a></div>
+</div>
+</article>
+<article class="project-card project-coming">
+<span class="project-number">02</span>
+<div>
+<h3>AI Project</h3>
+<p>Un nuovo progetto dedicato all'Intelligenza Artificiale.</p>
+<span class="coming-soon">Coming soon</span>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="section section-alternate" id="certifications">
+<div class="section-container">
+<p class="section-number">04</p>
+<p class="section-label">Certificazioni</p>
+<h2 class="section-title">Continuo ad imparare.</h2>
+<p class="section-description">Certificazioni e percorsi che accompagnano la mia crescita professionale.</p>
+<div class="certifications-list">
+<details class="certification-item">
+<summary>
+<div class="certification-heading">
+<span class="certification-year">2026</span>
+<div>
+<h3>Junior Java Developer</h3>
+<p>Generation Italy</p>
+</div>
+</div>
+<span class="certification-open">+</span>
+</summary>
+<div class="certification-details">
+<p>Percorso intensivo dedicato allo sviluppo software con Java, Spring Boot, database relazionali, tecnologie web e metodologia Scrum.</p>
+<div class="certification-tags"><span>Java</span><span>Spring Boot</span><span>SQL</span><span>MySQL</span><span>Git</span><span>Scrum</span></div>
+<span class="certificate-pending">Certificato in arrivo</span>
+</div>
+</details>
+<details class="certification-item">
+<summary>
+<div class="certification-heading">
+<span class="certification-year">2026</span>
+<div>
+<h3>Introduzione alla Programmazione</h3>
+<p>Lacerba.io · Marzo 2026</p>
+</div>
+</div>
+<span class="certification-open">+</span>
+</summary>
+<div class="certification-details">
+<p>Primo passo del mio percorso nella programmazione, dedicato ai concetti fondamentali dell'informatica e al problem solving. Ho approfondito il modello computazionale, l'architettura hardware/software, i principali paradigmi dei linguaggi di programmazione e la distinzione tra frontend e backend.</p>
+<div class="certification-tags">
+<span>Programming Fundamentals</span>
+<span>Problem Solving</span>
+<span>Hardware & Software</span>
+<span>Frontend</span>
+<span>Backend</span>
+</div>
+<a th:href="@{/certificazioni/Certificazione_Lacerba.pdf}" target="_blank" rel="noopener noreferrer">Visualizza certificato ↗</a>
+</div>
+</details>
+</div>
+</div>
+</section>
+<section class="section" id="experience">
+<div class="section-container">
+<p class="section-number">05</p>
+<p class="section-label">Percorso</p>
+<h2 class="section-title">La strada fino ad oggi.</h2>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-year">2021 — 2026</div>
+<div class="timeline-content">
+<h3>Amministrazione & Contabilità</h3>
+<p>Esperienza professionale nella gestione contabile e organizzativa, nel rapporto con clienti e nella gestione delle scadenze.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-year">2026</div>
+<div class="timeline-content">
+<h3>Generation Italy</h3>
+<p>Percorso intensivo dedicato allo sviluppo Java, Spring Boot, database, tecnologie web e metodologia Scrum.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-year">Oggi</div>
+<div class="timeline-content">
+<h3>Building my path in Tech</h3>
+<p>Continuo a costruire progetti, approfondire nuove tecnologie e ampliare progressivamente le mie competenze nel settore IT.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section contact-section" id="contact">
+<div class="section-container contact-container">
+<div class="contact-heading">
+<p class="section-number">06</p>
+<p class="section-label">Contatti</p>
+<h2 class="contact-title">Let's talk.</h2>
+<p class="contact-intro">Hai un'opportunità, un progetto o vuoi semplicemente entrare in contatto con me?</p>
+<div class="contact-social">
+<a href="https://www.linkedin.com/in/giuliabalaban/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+<a href="https://github.com/balabangiulia8-cat" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+<a href="mailto:balabangiulia8@gmail.com">Email ↗</a>
+<a th:href="@{/cv/CV_Giulia_Balaban_Portfolio.pdf}"
+   href="/cv/CV_Giulia_Balaban_Portfolio.pdf"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="btn btn-secondary">
+Visualizza CV ↗
+</a>
+</div>
+</div>
+<div class="contact-right">
+<div class="form-success" th:if="${successMessage}">
+<span th:text="${successMessage}"></span>
+</div>
+<div class="form-error" th:if="${errorMessage}">
+<span th:text="${errorMessage}"></span>
+</div>
+<form class="contact-form" th:action="@{/contact}" method="post">
+<div class="form-row">
+<div class="form-group">
+<label for="name">Nome</label>
+<input type="text" id="name" name="name" maxlength="80" autocomplete="name" placeholder="Il tuo nome" th:value="${formName}" required>
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" id="email" name="email" maxlength="150" autocomplete="email" placeholder="email@example.com" th:value="${formEmail}" required>
+</div>
+</div>
+<div class="form-group">
+<label for="message">Messaggio</label>
+<textarea id="message" name="message" rows="6" minlength="5" maxlength="2000" placeholder="Scrivimi un messaggio..." th:text="${formMessage}" required></textarea>
+</div>
+<div class="honeypot" aria-hidden="true">
+<label for="website">Website</label>
+<input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+</div>
+<button type="submit" class="btn btn-primary">Invia messaggio</button>
+
+</form>
+</div>
+</div>
+</section>
+</main>
+<div th:replace="~{fragments/footer :: footer}"></div>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

@@ -1,0 +1,512 @@
+/* =========================================================
+   01. VARIABILI GLOBALI
+========================================================= */
+:root{
+--background:#070b14;
+--background-light:#0d1322;
+--surface:rgba(255,255,255,.025);
+--surface-hover:rgba(255,255,255,.045);
+--text-primary:#f8fafc;
+--text-secondary:#94a3b8;
+--blue:#38bdf8;
+--violet:#8b5cf6;
+--border:rgba(255,255,255,.09);
+--max-width:1200px;
+--mouse-x:50%;
+--mouse-y:50%;
+}
+
+/* =========================================================
+   02. RESET E STILI GENERALI
+========================================================= */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:auto;}
+body{background:var(--background);color:var(--text-primary);font-family:Arial,Helvetica,sans-serif;line-height:1.6;padding-top:90px;overflow-x:hidden;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(650px circle at var(--mouse-x) var(--mouse-y),rgba(56,189,248,.13),transparent 42%),radial-gradient(900px circle at 80% 20%,rgba(139,92,246,.05),transparent 40%);z-index:0;}
+header,main,footer{position:relative;z-index:1;}
+a{color:inherit;}
+section[id]{scroll-margin-top:110px;}
+
+/* =========================================================
+03. NAVBAR
+========================================================= */
+.header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(7,11,20,.78);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border);}
+.navbar{max-width:var(--max-width);margin:0 auto;padding:23px 32px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-size:26px;font-weight:800;letter-spacing:-1px;text-decoration:none;}
+.nav-links{display:flex;align-items:center;gap:30px;list-style:none;}
+.nav-links a{position:relative;text-decoration:none;font-size:14px;color:var(--text-secondary);transition:color .25s ease;}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-7px;width:0;height:1px;background:linear-gradient(90deg,var(--blue),var(--violet));transition:width .25s ease;}
+.nav-links a:hover,.nav-links a.active{color:var(--text-primary);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-links a.active::before{content:"";position:absolute;left:50%;top:-12px;width:4px;height:4px;border-radius:50%;background:var(--blue);transform:translateX(-50%);box-shadow:0 0 10px rgba(56,189,248,.8);}
+
+/* =========================================================
+04. HAMBURGER
+========================================================= */
+.menu-toggle{display:none;border:0;background:transparent;cursor:pointer;padding:8px;}
+.menu-toggle span{display:block;width:26px;height:2px;margin:0;background:var(--text-primary);border-radius:10px;transition:transform .25s ease,opacity .25s ease;}
+/* =========================================================
+   05. HERO HOME
+========================================================= */
+.hero{min-height:calc(100vh - 90px);display:flex;align-items:center;max-width:var(--max-width);margin:0 auto;padding:90px 32px;}
+.hero-content{max-width:1000px;}
+.hero h1{font-size:clamp(60px,9vw,112px);line-height:.92;letter-spacing:-6px;margin-bottom:30px;}
+.hero h2{font-size:clamp(32px,5vw,58px);color:var(--text-secondary);line-height:1.05;letter-spacing:-2px;margin-bottom:28px;}
+.hero-description{font-size:18px;margin-bottom:16px;}
+.hero-text{max-width:650px;color:var(--text-secondary);font-size:17px;margin-bottom:40px;}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:16px;}
+
+/* =========================================================
+   06. ELEMENTI RIUTILIZZABILI
+========================================================= */
+.section{padding:130px 32px;}
+.section-alternate{background:rgba(255,255,255,.012);}
+.section-container{width:100%;max-width:var(--max-width);margin:0 auto;}
+.section-number{color:#64748b;font-size:12px;margin-bottom:6px;}
+.section-label{display:inline-block;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:2.5px;margin-bottom:16px;background:linear-gradient(90deg,var(--blue),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;}
+.section-title{max-width:900px;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-3px;margin-bottom:65px;}
+.section-description{max-width:650px;color:var(--text-secondary);margin-top:-40px;margin-bottom:55px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;transition:transform .25s ease,background .25s ease,border-color .25s ease;}
+.btn-primary{color:#070b14;border:none;background:linear-gradient(90deg,var(--blue),#67e8f9);}
+.btn-primary:hover{transform:translateY(-3px);}
+.btn-secondary{color:var(--text-primary);border:1px solid var(--border);background:rgba(255,255,255,.02);}
+.btn-secondary:hover{transform:translateY(-3px);border-color:rgba(56,189,248,.5);}
+
+/* =========================================================
+   07. CHI SONO
+========================================================= */
+.about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:90px;}
+.about-main{max-width:680px;color:var(--text-secondary);font-size:19px;}
+.about-main p{margin-bottom:24px;}
+.about-card{position:relative;overflow:hidden;padding:32px;border:1px solid var(--border);border-radius:18px;background:linear-gradient(145deg,rgba(56,189,248,.045),rgba(139,92,246,.025));backdrop-filter:blur(10px);}
+.about-card>span{display:block;margin-bottom:24px;color:var(--text-secondary);font-size:13px;}
+.about-card ul{list-style:none;}
+.about-card li{padding:12px 0;border-bottom:1px solid var(--border);}
+.about-card li:last-child{border-bottom:none;}
+
+/* =========================================================
+   08. COMPETENZE
+========================================================= */
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.skill-card{position:relative;overflow:hidden;min-height:390px;padding:32px;border:1px solid var(--border);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.03),rgba(255,255,255,.015));backdrop-filter:blur(10px);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease,background .3s ease;}
+.skill-card::before{content:"";position:absolute;top:-80px;right:-80px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.18),transparent 65%);opacity:.6;transition:transform .35s ease,opacity .35s ease;}
+.skill-card:hover{transform:translateY(-8px);border-color:rgba(56,189,248,.35);box-shadow:0 20px 50px rgba(0,0,0,.18);background:var(--surface-hover);}
+.skill-card:hover::before{transform:scale(1.15);opacity:1;}
+.skill-card>*{position:relative;z-index:1;}
+.skill-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;}
+.skill-number{color:#64748b;font-size:12px;letter-spacing:1px;}
+.skill-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--text-primary);font-size:18px;font-weight:600;}
+.skill-card h3{font-size:26px;margin-bottom:16px;letter-spacing:-1px;}
+.skill-text{color:var(--text-secondary);font-size:15px;line-height:1.7;margin-bottom:20px;}
+.skill-group{margin-top:22px;}
+.skill-category{margin-bottom:10px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.6px;color:var(--blue);}
+.skill-tags{display:flex;flex-wrap:wrap;gap:10px;}
+.skill-tags span{display:inline-flex;align-items:center;justify-content:center;padding:8px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;background:rgba(255,255,255,.035);color:var(--text-secondary);font-size:12px;line-height:1;white-space:nowrap;transition:all .25s ease;}
+.skill-tags span:hover{color:var(--text-primary);border-color:rgba(56,189,248,.45);background:rgba(56,189,248,.08);transform:translateY(-2px);}
+.skill-card-wide{grid-column:1/-1;min-height:auto;}
+.skill-card-wide .skill-text{max-width:760px;}
+
+/* =========================================================
+   09. PROGETTI HOME
+========================================================= */
+.projects-grid{display:grid;grid-template-columns:2fr 1fr;gap:24px;}
+.project-card{position:relative;overflow:hidden;min-height:440px;padding:38px;display:flex;flex-direction:column;border:1px solid var(--border);border-radius:18px;background:var(--surface);transition:transform .3s ease,border-color .3s ease;}
+.project-card:hover{transform:translateY(-7px);border-color:rgba(139,92,246,.35);}
+.project-featured{background:linear-gradient(145deg,rgba(56,189,248,.08),rgba(139,92,246,.035));}
+.project-top{display:flex;justify-content:space-between;margin-bottom:auto;}
+.project-number,.project-status{color:#64748b;font-size:12px;}
+.project-card h3{font-size:clamp(34px,4vw,50px);letter-spacing:-2px;margin-bottom:16px;}
+.project-card p{max-width:620px;color:var(--text-secondary);margin-bottom:26px;}
+.project-tech{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px;}
+.project-tech span,.certification-tags span{padding:6px 12px;border:1px solid var(--border);border-radius:100px;color:var(--text-secondary);font-size:12px;}
+.project-links a{text-decoration:none;font-size:14px;font-weight:600;transition:color .25s ease;}
+.project-links a:hover{color:var(--blue);}
+.project-coming{justify-content:space-between;}
+.coming-soon{display:inline-block;margin-top:20px;color:var(--blue);font-size:12px;text-transform:uppercase;letter-spacing:1px;}
+
+/* =========================================================
+   10. CERTIFICAZIONI
+========================================================= */
+.certifications-list{border-top:1px solid var(--border);}
+.certification-item{border-bottom:1px solid var(--border);}
+.certification-item summary{padding:30px 0;display:flex;align-items:center;justify-content:space-between;cursor:pointer;list-style:none;}
+.certification-item summary::-webkit-details-marker{display:none;}
+.certification-heading{display:flex;align-items:center;gap:50px;}
+.certification-year{min-width:60px;color:var(--blue);font-size:12px;}
+.certification-heading h3{font-size:22px;margin-bottom:3px;}
+.certification-heading p{color:var(--text-secondary);font-size:14px;}
+.certification-open{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--border);border-radius:50%;font-size:22px;transition:transform .3s ease,border-color .3s ease;}
+.certification-item[open] .certification-open{transform:rotate(45deg);border-color:rgba(56,189,248,.5);}
+.certification-details{max-width:750px;padding:0 0 35px 110px;color:var(--text-secondary);}
+.certification-details p{margin-bottom:20px;}
+.certification-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:25px;}
+.certification-details a{color:var(--text-primary);text-decoration:none;font-size:14px;}
+.certification-details a:hover{color:var(--blue);}
+.certificate-pending{display:inline-block;margin-top:4px;color:var(--text-secondary);font-size:13px;font-style:italic;}
+
+/* =========================================================
+   11. PERCORSO
+========================================================= */
+.timeline{border-top:1px solid var(--border);}
+.timeline-item{display:grid;grid-template-columns:220px 1fr;gap:50px;padding:44px 0;border-bottom:1px solid var(--border);}
+.timeline-year{color:#64748b;font-size:13px;}
+.timeline-content h3{font-size:26px;margin-bottom:10px;}
+.timeline-content p{max-width:650px;color:var(--text-secondary);}
+
+/* =========================================================
+   12. CONTATTI
+========================================================= */
+.contact-section{min-height:100vh;background:linear-gradient(180deg,rgba(7,11,20,0),rgba(13,19,34,.85));}
+.contact-container{display:grid;grid-template-columns:.9fr 1.1fr;gap:100px;align-items:start;}
+.contact-heading{width:100%;}
+.contact-title{font-size:clamp(62px,8vw,110px);line-height:.9;letter-spacing:-5px;margin-bottom:35px;}
+.contact-intro{max-width:500px;color:var(--text-secondary);font-size:18px;margin-bottom:35px;}
+.contact-social{display:flex;flex-wrap:wrap;align-items:center;gap:25px;}
+.contact-social a:not(.btn){color:var(--text-secondary);text-decoration:none;font-size:14px;transition:color .25s ease;}
+.contact-social a:not(.btn):hover{color:var(--blue);}
+.contact-right{width:100%;display:flex;flex-direction:column;}
+.contact-form{width:100%;}
+.form-error{width:100%;margin-bottom:28px;padding:16px 18px;border:1px solid rgba(248,113,113,.35);border-radius:10px;background:rgba(248,113,113,.07);color:#fca5a5;font-size:14px;}
+.form-success{width:100%;margin-bottom:28px;padding:16px 18px;border:1px solid rgba(56,189,248,.35);border-radius:10px;background:rgba(56,189,248,.07);color:var(--text-primary);font-size:14px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.form-group{display:flex;flex-direction:column;margin-bottom:22px;}
+.form-group label{margin-bottom:9px;font-size:13px;color:var(--text-secondary);}
+.form-group input,.form-group textarea{width:100%;padding:17px;border:1px solid var(--border);border-radius:9px;outline:none;color:var(--text-primary);background:rgba(255,255,255,.025);font-family:inherit;font-size:15px;transition:border-color .25s ease,background .25s ease;}
+.form-group input:focus,.form-group textarea:focus{border-color:rgba(56,189,248,.7);background:rgba(56,189,248,.025);}
+.form-group textarea{resize:vertical;}
+
+/* =========================================================
+   13. ANTI-SPAM
+========================================================= */
+.honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important;}
+
+/* =========================================================
+   14. FOOTER GLOBALE
+========================================================= */
+.footer{padding:70px 32px 30px;border-top:1px solid var(--border);background:rgba(5,8,15,.75);}
+.footer-main{width:100%;max-width:var(--max-width);margin:0 auto 60px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:80px;}
+.footer-brand .footer-logo{display:inline-block;margin-bottom:15px;font-size:32px;font-weight:800;letter-spacing:-1px;text-decoration:none;}
+.footer-brand p{max-width:300px;color:var(--text-secondary);font-size:14px;}
+.footer-navigation,.footer-social{display:flex;flex-direction:column;align-items:flex-start;gap:10px;}
+.footer-navigation>span,.footer-social>span{margin-bottom:8px;color:#64748b;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.8px;}
+.footer-navigation a,.footer-social a{color:var(--text-secondary);font-size:13px;text-decoration:none;transition:color .25s ease,transform .25s ease;}
+.footer-navigation a:hover,.footer-social a:hover{color:var(--blue);transform:translateX(3px);}
+.footer-bottom{width:100%;max-width:var(--max-width);margin:0 auto;padding-top:25px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:30px;color:#64748b;font-size:11px;}
+.footer-legal{display:flex;align-items:center;gap:25px;}
+.footer-legal a{color:#64748b;text-decoration:none;transition:color .25s ease;}
+.footer-legal a:hover{color:var(--blue);}
+
+/* =========================================================
+   15. EFFETTI E ANIMAZIONI
+========================================================= */
+.skill-card,.project-card,.about-card{--card-x:50%;--card-y:50%;}
+.skill-card::after,.project-card::after,.about-card::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:radial-gradient(420px circle at var(--card-x) var(--card-y),rgba(56,189,248,.11),transparent 42%);opacity:0;transition:opacity .25s ease;z-index:0;}
+.skill-card:hover::after,.project-card:hover::after,.about-card:hover::after{opacity:1;}
+.skill-card>*,.project-card>*,.about-card>*{position:relative;z-index:1;}
+.reveal{opacity:0;translate:0 35px;transition:opacity .7s ease,translate .7s cubic-bezier(.2,.7,.2,1);}
+.reveal.visible{opacity:1;translate:0 0;}
+
+/* =========================================================
+   16. ITINERARIA - HERO
+========================================================= */
+.case-study{overflow:hidden;}
+.project-hero{min-height:calc(100vh - 90px);padding:70px 32px 80px;display:flex;align-items:flex-start;background:radial-gradient(circle at 75% 30%,rgba(139,92,246,.12),transparent 30%),radial-gradient(circle at 25% 70%,rgba(56,189,248,.08),transparent 30%);}
+.project-hero-inner,.case-container{width:100%;max-width:var(--max-width);margin:0 auto;}
+.project-back{display:block;width:max-content;margin-bottom:45px;color:var(--text-secondary);font-size:13px;text-decoration:none;transition:color .25s ease;}
+.project-back:hover{color:var(--blue);}
+.project-hero .section-label{display:block;width:max-content;margin-bottom:30px;}
+.project-hero h1{font-size:clamp(72px,10vw,135px);line-height:.88;letter-spacing:-7px;margin-bottom:28px;}
+.project-hero-subtitle{font-size:clamp(30px,4vw,55px);line-height:1;letter-spacing:-2px;color:var(--text-secondary);margin-bottom:30px;}
+.project-hero-description{max-width:760px;color:var(--text-secondary);font-size:18px;line-height:1.8;margin-bottom:38px;}
+.project-hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:65px;}
+.project-meta{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.project-meta div{padding:25px 20px;border-right:1px solid var(--border);}
+.project-meta div:first-child{padding-left:0;}
+.project-meta div:last-child{border-right:none;}
+.project-meta span{display:block;color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:1.4px;margin-bottom:7px;}
+.project-meta strong{font-size:14px;font-weight:500;}
+
+/* =========================================================
+   17. ITINERARIA - CASE STUDY
+========================================================= */
+.case-section{padding:130px 32px;}
+.case-section-alt{background:rgba(255,255,255,.012);}
+.case-number{font-size:12px;color:#64748b;margin-bottom:6px;}
+.case-title{font-size:clamp(42px,5vw,72px);line-height:1;letter-spacing:-3px;margin-bottom:55px;}
+.case-two-columns{display:grid;grid-template-columns:.85fr 1.15fr;gap:100px;}
+.case-two-columns .case-title{margin-bottom:0;}
+.case-copy{max-width:700px;color:var(--text-secondary);font-size:18px;line-height:1.8;}
+.case-copy p{margin-bottom:22px;}
+
+/* =========================================================
+   18. ITINERARIA - FUNZIONALITÀ
+========================================================= */
+.case-features{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.case-feature{min-height:240px;padding:30px;border:1px solid var(--border);border-radius:18px;background:var(--surface);transition:transform .3s ease,border-color .3s ease;}
+.case-feature:hover{transform:translateY(-6px);border-color:rgba(56,189,248,.35);}
+.case-feature>span{display:block;color:#64748b;font-size:11px;margin-bottom:45px;}
+.case-feature h3{font-size:24px;margin-bottom:12px;}
+.case-feature p{color:var(--text-secondary);}
+
+/* =========================================================
+   19. ITINERARIA - TECH STACK
+========================================================= */
+.case-tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.case-tech{padding:28px;border:1px solid var(--border);border-radius:16px;background:var(--surface);}
+.case-tech span{display:block;color:var(--blue);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:24px;}
+.case-tech h3{font-size:23px;margin-bottom:8px;}
+.case-tech p{color:var(--text-secondary);font-size:14px;}
+
+/* =========================================================
+   20. ITINERARIA - MEDIA
+========================================================= */
+.case-intro{max-width:650px;color:var(--text-secondary);margin-top:-30px;margin-bottom:45px;}
+.case-video{overflow:hidden;border:1px solid var(--border);border-radius:18px;background:#000;box-shadow:0 30px 70px rgba(0,0,0,.25);}
+.case-video video{display:block;width:100%;height:auto;}
+.case-gallery{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.case-shot{overflow:hidden;border:1px solid var(--border);border-radius:18px;background:var(--surface);}
+.case-shot-wide{grid-column:1/-1;}
+.case-shot img{display:block;width:100%;height:auto;transition:transform .5s ease;}
+.case-shot:hover img{transform:scale(1.015);}
+.case-shot figcaption{padding:18px 20px;color:var(--text-secondary);font-size:13px;border-top:1px solid var(--border);}
+
+/* =========================================================
+   21. ITINERARIA - FINALE
+========================================================= */
+.project-final{padding:150px 32px;text-align:center;background:linear-gradient(180deg,rgba(13,19,34,.4),rgba(7,11,20,1));}
+.project-final h2{font-size:clamp(48px,7vw,90px);line-height:.95;letter-spacing:-4px;margin-bottom:25px;}
+.project-final p{color:var(--text-secondary);font-size:17px;margin-bottom:35px;}
+.project-final-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;}
+
+/* =========================================================
+   22. PRIVACY & COOKIE POLICY
+========================================================= */
+.privacy-page{padding:75px 32px 140px;}
+.privacy-container{width:100%;max-width:920px;margin:0 auto;}
+.privacy-header{padding-bottom:70px;}
+.privacy-header h1{max-width:850px;font-size:clamp(65px,9vw,110px);line-height:.9;letter-spacing:-6px;margin:15px 0 25px;}
+.privacy-updated{color:#64748b;font-size:12px;}
+.privacy-intro{max-width:760px;margin-bottom:70px;color:var(--text-secondary);font-size:19px;line-height:1.8;}
+.privacy-block{position:relative;padding:48px 0;border-top:1px solid var(--border);}
+.privacy-number{display:block;margin-bottom:12px;color:var(--blue);font-size:10px;font-weight:700;letter-spacing:1.5px;}
+.privacy-block h2{font-size:28px;letter-spacing:-1px;margin-bottom:22px;}
+.privacy-block h3{margin:28px 0 12px;font-size:15px;}
+.privacy-block p{color:var(--text-secondary);font-size:15px;line-height:1.8;margin-bottom:14px;}
+.privacy-block ul{margin:18px 0 20px 20px;color:var(--text-secondary);}
+.privacy-block li{padding:4px 0;}
+.privacy-block a{color:var(--blue);text-decoration:none;}
+.privacy-block a:hover{text-decoration:underline;}
+.privacy-table-wrapper{width:100%;overflow-x:auto;margin:30px 0;}
+.privacy-table{width:100%;border-collapse:collapse;min-width:600px;}
+.privacy-table th,.privacy-table td{padding:16px;text-align:left;border:1px solid var(--border);font-size:13px;}
+.privacy-table th{color:var(--text-primary);background:rgba(255,255,255,.035);}
+.privacy-table td{color:var(--text-secondary);}
+
+/* =========================================================
+   23. RESPONSIVE - TABLET GRANDE
+========================================================= */
+@media(max-width:1050px){
+.navbar{padding:20px 24px;}
+.nav-links{gap:18px;}
+.nav-links a{font-size:13px;}
+.footer-main{gap:50px;}
+}
+
+/* =========================================================
+   24. RESPONSIVE - TABLET
+========================================================= */
+@media(max-width:950px){
+.about-grid,.projects-grid,.contact-container{grid-template-columns:1fr;}
+.contact-container{gap:60px;}
+.skills-grid{grid-template-columns:1fr;}
+.skill-card-wide{grid-column:auto;}
+.timeline-item{grid-template-columns:1fr;gap:12px;}
+.project-meta{grid-template-columns:repeat(2,1fr);}
+.project-meta div:nth-child(2){border-right:none;}
+.project-meta div:nth-child(-n+2){border-bottom:1px solid var(--border);}
+.case-two-columns{grid-template-columns:1fr;gap:35px;}
+.case-two-columns .case-title{margin-bottom:0;}
+.case-tech-grid{grid-template-columns:repeat(2,1fr);}
+.footer-main{grid-template-columns:1.5fr 1fr 1fr;}
+}
+
+/* =========================================================
+   25. RESPONSIVE - SMARTPHONE
+========================================================= */
+@media(max-width:650px){
+body{padding-top:75px;}
+section[id]{scroll-margin-top:95px;}
+
+/* NAVBAR */
+.navbar{position:relative;padding:18px 20px;overflow:visible;}
+.logo{font-size:22px;}
+.menu-toggle{display:flex;width:42px;height:42px;margin-left:auto;padding:9px;flex-direction:column;justify-content:center;align-items:center;gap:5px;}
+.menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.menu-toggle.active span:nth-child(2){opacity:0;}
+.menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-links{position:absolute;top:100%;left:0;width:100%;padding:12px 20px 20px;display:flex;flex-direction:column;align-items:flex-start;gap:0;background:rgba(7,11,20,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);opacity:0;visibility:hidden;transform:translateY(-10px);pointer-events:none;transition:opacity .25s ease,transform .25s ease,visibility .25s ease;}
+.nav-links.open{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}
+.nav-links li{width:100%;}
+.nav-links a{display:block;width:100%;padding:13px 0;font-size:14px;}
+.nav-links a::after,.nav-links a.active::before{display:none;}
+
+/* HERO */
+.hero{min-height:calc(100svh - 75px);padding:60px 20px;}
+.hero h1{font-size:clamp(54px,17vw,78px);line-height:.92;letter-spacing:-4px;}
+.hero h2{font-size:clamp(30px,9vw,42px);line-height:1.05;letter-spacing:-1.5px;}
+.hero-description{font-size:15px;line-height:1.6;}
+.hero-text{font-size:15px;}
+.hero-buttons{flex-direction:column;}
+.btn{width:100%;}
+
+/* SEZIONI */
+.section{padding:90px 20px;}
+.section-title{font-size:clamp(38px,11vw,52px);letter-spacing:-2px;margin-bottom:45px;}
+.section-description{margin-top:-25px;}
+
+/* CHI SONO */
+.about-grid{grid-template-columns:1fr;gap:35px;}
+.about-main{font-size:16px;}
+.about-card{padding:24px;}
+
+/* COMPETENZE */
+.skills-grid{grid-template-columns:1fr;}
+.skill-card{min-height:auto;padding:24px;}
+.skill-card-wide{grid-column:auto;}
+
+/* PROGETTI */
+.projects-grid{grid-template-columns:1fr;}
+.project-card{min-height:330px;padding:25px;}
+
+/* CERTIFICAZIONI */
+.certification-heading{gap:14px;}
+.certification-year{min-width:45px;}
+.certification-heading h3{font-size:18px;}
+.certification-details{padding:0 0 30px;}
+
+/* PERCORSO */
+.timeline-item{grid-template-columns:1fr;gap:10px;padding:32px 0;}
+
+/* CONTATTI */
+.contact-section{min-height:auto;}
+.contact-container{grid-template-columns:1fr;gap:55px;}
+.contact-title{font-size:clamp(58px,18vw,82px);letter-spacing:-3px;}
+.contact-intro{font-size:16px;}
+.contact-social{align-items:flex-start;flex-direction:column;}
+.contact-social .btn{width:auto;}
+.form-row{grid-template-columns:1fr;}
+.form-group input,.form-group textarea{font-size:16px;}
+
+/* ITINERARIA */
+.project-hero{min-height:auto;padding:55px 20px 80px;}
+.project-back{margin-bottom:35px;}
+.project-hero .section-label{margin-bottom:24px;}
+.project-hero h1{font-size:clamp(62px,20vw,90px);line-height:.9;letter-spacing:-5px;}
+.project-hero-subtitle{font-size:clamp(28px,9vw,40px);}
+.project-hero-description{font-size:15px;}
+.project-hero-actions{flex-direction:column;margin-bottom:50px;}
+.project-meta{grid-template-columns:1fr;}
+.project-meta div{padding:18px 0;border-right:none;border-bottom:1px solid var(--border);}
+.project-meta div:last-child{border-bottom:none;}
+.case-section{padding:85px 20px;}
+.case-title{font-size:clamp(38px,12vw,54px);letter-spacing:-2px;}
+.case-two-columns{grid-template-columns:1fr;gap:30px;}
+.case-copy{font-size:16px;}
+.case-features,.case-tech-grid,.case-gallery{grid-template-columns:1fr;}
+.case-feature{min-height:auto;}
+.case-video{border-radius:12px;}
+.project-final{padding:90px 20px;}
+.project-final h2{font-size:clamp(45px,13vw,65px);letter-spacing:-3px;}
+
+/* FOOTER */
+.footer{padding:55px 20px 25px;}
+.footer-main{grid-template-columns:1fr;gap:40px;margin-bottom:45px;}
+.footer-brand .footer-logo{font-size:28px;}
+.footer-bottom{flex-direction:column;align-items:flex-start;gap:15px;}
+.footer-legal{flex-direction:column;align-items:flex-start;gap:8px;}
+
+/* PRIVACY */
+.privacy-page{padding:55px 20px 90px;}
+.privacy-header{padding-bottom:50px;}
+.privacy-header h1{font-size:clamp(52px,16vw,75px);letter-spacing:-4px;}
+.privacy-intro{font-size:16px;margin-bottom:50px;}
+.privacy-block{padding:35px 0;}
+.privacy-block h2{font-size:23px;}
+.privacy-table{min-width:550px;}
+}
+
+/* ERROR PAGES */
+.error-page{
+min-height:calc(100svh - 75px);
+padding:70px 20px 90px;
+}
+
+.error-page h1{
+font-size:clamp(52px,16vw,75px);
+letter-spacing:-4px;
+}
+
+.error-description{
+font-size:15px;
+}
+
+.error-actions{
+flex-direction:column;
+}
+
+/* =========================================================
+   26. ACCESSIBILITÀ
+========================================================= */
+@media(prefers-reduced-motion:reduce){
+.reveal{opacity:1;translate:none;transition:none;}
+.skill-card,.project-card,.about-card,.btn,.nav-links a{transition:none;}
+}
+
+
+
+/* =========================================================
+   ERROR PAGES
+   Pagine personalizzate 404 e 500
+========================================================= */
+.error-page{
+min-height:calc(100vh - 90px);
+padding:100px 32px 130px;
+display:flex;
+align-items:center;
+}
+
+.error-container{
+width:100%;
+max-width:var(--max-width);
+margin:0 auto;
+}
+
+.error-code{
+font-size:14px;
+font-weight:700;
+letter-spacing:4px;
+color:var(--blue);
+margin-bottom:18px;
+}
+
+.error-page h1{
+max-width:1000px;
+font-size:clamp(60px,9vw,110px);
+line-height:.9;
+letter-spacing:-6px;
+margin-bottom:32px;
+}
+
+.error-description{
+max-width:600px;
+color:var(--text-secondary);
+font-size:17px;
+line-height:1.8;
+margin-bottom:40px;
+}
+
+.error-actions{
+display:flex;
+flex-wrap:wrap;
+gap:14px;
+}
